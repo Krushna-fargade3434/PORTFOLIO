@@ -1,4 +1,5 @@
 import './App.css'
+import { useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Navbar from './components/navbar'
 import Footer from './components/footer'
@@ -9,10 +10,20 @@ import Projects from './pages/projects'
 import Contact from './pages/contact'
 
 function App() {
+  useEffect(() => {
+    const onScroll = () => {
+      document.body.classList.toggle('scrolled', window.scrollY > 12)
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[color:var(--bg-page)] text-[color:var(--text-primary)]">
       <Navbar />
-      <main className="flex-1 px-6 pt-24 pb-10 max-w-6xl mx-auto w-full">
+      <main className="flex-1 px-4 sm:px-6 pt-24 pb-10 max-w-6xl mx-auto w-full">
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<Home />} />
