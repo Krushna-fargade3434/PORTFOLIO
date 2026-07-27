@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root{
+  /* Light theme - warm neutral palette */
+  --bg-page: #F8F7F4; /* page background */
+  --bg-section: #FFFFFF; /* section background */
+  --card-bg: #F1EFEA; /* card background */
+  --text-primary: #222222; /* primary text */
+  --text-secondary: #6B7280; /* secondary text */
+  --accent: #A67C52; /* warm accent */
+  --accent-hover: #8C6844;
+  --border: #E5E7EB; /* subtle borders */
+  --success: #22C55E;
+  --error: #EF4444;
+
+  /* Spacing */
+  --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px; --space-5: 40px;
+
+  /* Radii */
+  --r-card: 20px; --r-btn: 14px; --r-image: 30px;
+}
+
+html,body{height:100%}
+body{
+  background: var(--bg-page);
+  color:var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+
+/* Typography */
+.hero-title{font-size:72px;line-height:1.02;color:var(--text-primary);}
+.section-title{font-size:42px;color:var(--text-primary);margin-bottom:var(--space-3)}
+.card-title{font-size:24px;color:var(--text-primary)}
+p.lead{font-size:18px;color:var(--text-secondary)}
+.btn-text{font-size:16px}
+
+/* Sections */
+section{background:transparent;padding-top:var(--space-5);padding-bottom:var(--space-5)}
+
+/* Card */
+.card{background:var(--card-bg);border:1px solid var(--border);box-shadow:0 8px 20px rgba(34,34,34,0.06);border-radius:var(--r-card);padding:24px}
+.card{transition:transform .28s ease, box-shadow .28s ease;}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(34,34,34,0.08)}
+
+/* Buttons */
+.btn-primary{border-radius:var(--r-btn);padding:12px 28px;background:var(--accent);color:white;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(166,124,82,0.08);transition:transform .3s ease,box-shadow .3s ease;font-size:18px}
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(140,104,68,0.12);background:var(--accent-hover)}
+.btn-ghost{background:transparent;border:1px solid var(--border);padding:10px 22px;border-radius:var(--r-btn);color:var(--text-primary)}
+
+/* Images */
+.hero-image{border-radius:var(--r-image);box-shadow:0 12px 36px rgba(34,34,34,0.06);border:1px solid rgba(0,0,0,0.04);transition:transform 3s ease-in-out}
+.hero-image.float{animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+/* Navbar */
+.site-nav{background:rgba(255,255,255,0.8);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
+.nav-link{color:var(--text-primary);position:relative;padding-bottom:6px;transition:color .18s ease}
+.nav-link:hover{color:var(--accent)}
+.nav-link::after{content:'';position:absolute;left:0;bottom:-6px;height:3px;width:100%;background:var(--accent);border-radius:6px;transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.8,.2,1);opacity:0.95}
+.nav-link:hover::after{transform:scaleX(1)}
+.nav-link.active{color:var(--accent)}
+
+/* Navigation wrapper behavior */
+.nav-links{align-items:center}
+
+@media (max-width:768px){
+  .nav-content{position:relative}
+  .nav-links{position:absolute;top:64px;left:0;right:0;background:var(--bg-section);flex-direction:column;padding:12px;border-bottom:1px solid var(--border);gap:8px;z-index:40}
+  .nav-links.nav-open{display:flex}
+  .nav-links .nav-link{padding:8px 12px}
+}
+
+/* Helpers */
+.muted{color:var(--text-secondary)}
+.contact-card{transition:transform .28s ease,box-shadow .28s ease}
+.contact-card:hover{transform:translateY(-8px);box-shadow:0 14px 36px rgba(34,34,34,0.06)}
+
+/* Responsive tweaks */
+@media (max-width:768px){.hero-title{font-size:40px}.section-title{font-size:32px}}
+
+/* Accessibility focus: prefer focus-visible to avoid mouse-click outlines */
+a:focus,button:focus{outline: none;}
+a:focus-visible,button:focus-visible{outline:3px solid rgba(166,124,82,0.12);outline-offset:3px;border-radius:8px}
+
+/* Nav-link keyboard focus (subtle ring) */
+.nav-link:focus-visible{box-shadow:0 0 0 4px rgba(166,124,82,0.12);border-radius:6px}
+
+/* Footer link style */
+.footer-link{color:var(--text-secondary);transition:color .25s ease}
+.footer-link:hover{color:var(--accent)}
