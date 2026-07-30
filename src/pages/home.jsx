@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 
 const MotionDiv = motion.div;
@@ -18,7 +19,7 @@ function Home() {
 
                 <div className="mt-6 flex flex-wrap gap-3">
                     <a href="/RESUME-KRUSHNA.pdf" className="btn-primary" download>Download Resume</a>
-                    <a href="/projects" className="btn-secondary">View Projects</a>
+                    <Link to="/projects" className="btn-secondary">View Projects</Link>
                     <a href="https://github.com/Krushna-fargade3434" target="_blank" rel="noreferrer" className="btn-ghost">GitHub</a>
                     <a href="https://www.linkedin.com/in/krushna-fargade3434" target="_blank" rel="noreferrer" className="btn-ghost">LinkedIn</a>
                 </div>
