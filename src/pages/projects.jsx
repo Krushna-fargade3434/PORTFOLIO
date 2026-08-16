@@ -6,11 +6,11 @@ const MotionArticle = motion.article;
 
 const projects = [
   {
-    title: 'WanderLust',
+    title: 'BookMyCorner',
     description: 'A full-stack rental marketplace with cloud-based uploads, secure auth, and polished listing management.',
     tech: ['Node.js', 'Express', 'MongoDB', 'Passport.js', 'Cloudinary', 'Bootstrap'],
-    live: '#',
-    github: 'https://github.com/Krushna-fargade3434/airBNB.git',
+    live: 'https://bookmycorner34.netlify.app/listings',
+    github: 'https://github.com/Krushna-fargade3434/BookMyCorner.git',
     image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=80',
   },
   {
