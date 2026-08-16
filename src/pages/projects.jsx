@@ -33,7 +33,7 @@ const projects = [
     title: 'Weather App',
     description: 'A responsive weather dashboard with live forecasts, search, and polished UI transitions.',
     tech: ['React.js', 'Material-UI', 'JavaScript', 'OpenWeatherMap API', 'Vite'],
-    live: '#',
+    live: 'https://weather-dost-pied.vercel.app/',
     github: 'https://github.com/Krushna-fargade3434/weatherDost',
     image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=900&q=80',
   },
